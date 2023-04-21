@@ -193,6 +193,7 @@ export default class StorageFileApi {
       })
 
       if (res.ok) {
+        await res.body.cancel()
         return {
           data: { path: cleanPath },
           error: null,
